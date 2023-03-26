@@ -1,9 +1,9 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import withWidth, { isWidthUp } from '@material-ui/core/withWidth';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
-import ListSubheader from '@material-ui/core/ListSubheader';
 import IconButton from '@material-ui/core/IconButton';
 import InfoIcon from '@material-ui/icons/Info';
 import treeListData from './treeListData';
@@ -32,18 +32,27 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function TitlebarGridList() {
+ function TitlebarGridList(props) {
   const classes = useStyles();
+  function getCols(screenWidth) {
+    if (isWidthUp('lg', screenWidth)) {
+      return 5;
+    }
 
+    if (isWidthUp('md', screenWidth)) {
+      return 3;
+    }
+
+    return 1;
+  }
+  const cols = getCols(props.width); // width is associated when using withWidth()
   return (
     <div className={classes.root}>
-      <GridList cellHeight={300}  spacing={30} className={classes.gridList}>
-        <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
-          <ListSubheader component="div"></ListSubheader>
-        </GridListTile>
+      <GridList cellHeight={300} cols={cols} className={classes.gridList}>
+        
         {treeListData.map((tile) => (
-          <GridListTile key={tile.img} cols={2} lassName={classes.listItemStyle}>
-            <img src={tile.img} alt={tile.title} />
+          <GridListTile key={tile.img} lassName={classes.listItemStyle}>
+            <img src={process.env.PUBLIC_URL + tile.img} alt={tile.title} />
             <GridListTileBar
               title={tile.title}
               actionIcon={
@@ -58,3 +67,5 @@ export default function TitlebarGridList() {
     </div>
   );
 }
+
+export default withWidth()(TitlebarGridList);

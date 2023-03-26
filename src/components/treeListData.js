@@ -1,63 +1,63 @@
+
 const treeListData = [
-    {
-    img: 'images/apple.jpeg',
+  {
+    img: require('../images/apple.jpeg'),
     title: 'Apple',
-    },
+  },
+  {
+    img: require('../images/banyan.jpeg'),
+    title: 'Banyan',
+  },
     {
-    img: 'images/banyan.jpeg',
-    title: 'Banyan tree',
-    featured: true,
-    },
-    {
-      img: 'images/cherry.jpeg',
+      img: require('../images/cherry.jpeg'),
       title: 'Cherry',
     },
     {
-      img: 'images/citrus.jpeg',
+      img: require('../images/citrus.jpeg'),
       title: 'Citrus',
     },
     {
-      img: 'images/fig.jpeg',
+      img: require('../images/fig.jpeg'),
       title: 'Fig',
     },
     {
-      img: 'images/guava.jpeg',
+      img: require('../images/guava.jpeg'),
       title: 'Guava',
       featured: true,
     },
     {
-      img: 'images/maple.jpeg',
+      img: require('../images/maple.jpeg'),
       title: 'Maple',
     },
     {
-      img: 'images/orange.jpeg',
+      img: require('../images/orange.jpeg'),
       title: 'Orange',
     },
     {
-      img: 'images/Lemon.jpeg',
+      img: require('../images/lemon.jpeg'),
       title: 'Lemon',
     },
     {
-      img: 'images/lillypilly.jpeg',
+      img: require('../images/lillypilly.jpeg'),
       title: 'Lillypilly',
       featured: true,
     },
     {
-      img: 'images/pomegranate.jpeg',
+      img: require('../images/pomegranate.jpeg'),
       title: 'Pomegranate',
     },
     {
-      img: 'images/tamarind.jpeg',
+      img: require('../images/tamarind.jpeg'),
       title: 'Tamarind',
     },
     {
-      img: 'images/berry.jpeg',
+      img: require('../images/berry.jpeg'),
       title: 'Berry',
     },
     {
-      img: 'images/apple1.jpeg',
+      img: require('../images/apple1.jpeg'),
       title: 'Apple popular',
     },
   ];
-  
+
   export default treeListData;
